@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sekolah • Demo Website</title>
+  <style>
+    :root { --bg:#0f172a; --card:#111827; --muted:#94a3b8; --text:#e5e7eb; --accent:#22c55e; --danger:#ef4444; --warn:#f59e0b; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; background:linear-gradient(180deg,#0b1025,#0f172a 60%); color:var(--text); }
+    header { position:sticky; top:0; background:rgba(17,24,39,.75); backdrop-filter: blur(8px); border-bottom:1px solid #1f2937; z-index:10; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+    .flex { display:flex; gap:12px; align-items:center; }
+    .between { justify-content: space-between; }
+    nav { display:flex; gap:8px; flex-wrap:wrap; }
+    .tab { padding:10px 14px; border-radius:12px; border:1px solid #1f2937; background:#0b1222; color:var(--text); cursor:pointer; }
+    .tab.active { background:#111827; outline:2px solid #1f2937; }
+    .grid { display:grid; gap:12px; }
+    .two { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    @media (max-width: 800px){ .two { grid-template-columns: 1fr; } }
+    .card { background: #0b1222; border:1px solid #1f2937; border-radius:16px; box-shadow: 0 10px 30px rgba(0,0,0,.25); padding:16px; }
+    label { display:block; font-size:13px; color:var(--muted); margin-bottom:6px; }
+    input, textarea, select { width:100%; padding:10px 12px; border-radius:12px; border:1px solid #1f2937; background:#0a0f1c; color:var(--text); outline:none; }
+    textarea { min-height: 90px; resize: vertical; }
+    .btn { padding:10px 14px; border-radius:12px; border:1px solid #1f2937; background:#0a0f1c; color:var(--text); cursor:pointer; }
+    .btn.primary { background:linear-gradient(180deg,#16a34a,#22c55e); border:none; color:#052e13; font-weight:700; }
+    .btn.warn { background: #1f2937; color: var(--warn); }
+    .btn.danger { background:#1f2937; color: var(--danger); }
+    .row { display:flex; gap:8px; flex-wrap:wrap; }
+    .muted { color: var(--muted); font-size: 12px; }
+    .ok { color: var(--accent); }
+    .err { color: var(--danger); }
+    .list { display:grid; gap:10px; }
+    .item { padding:12px; border:1px solid #1f2937; border-radius:14px; background:#0b1326; }
+    .hidden { display:none; }
+    code { background:#0b1326; padding:2px 6px; border-radius:8px; border:1px solid #1f2937; }
+    .pill { font-size:12px; padding:3px 8px; border-radius:999px; background:#0b1326; border:1px solid #1f2937; color:var(--muted); }
+    footer { text-align:center; color:var(--muted); padding:40px 20px; }
+    .kbd{border:1px solid #1f2937;border-bottom-width:3px;border-radius:8px;padding:1px 6px;background:#0b1326}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container flex between">
+      <div class="flex" style="gap:10px">
+        <strong>📚 Sekolah</strong>
+        <span class="pill" id="apiBasePill"></span>
+      </div>
+      <nav id="tabs">
+        <button class="tab active" data-tab="guru">Guru</button>
+        <button class="tab" data-tab="siswa">Siswa</button>
+        <button class="tab" data-tab="tugas">Tugas</button>
+        <button class="tab" data-tab="chat">Chat AI</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container grid" style="margin-top:18px">
+    <!-- ===================== GURU ===================== -->
+    <section id="tab-guru" class="grid two">
+      <div class="card">
+        <h3>👨‍🏫 Registrasi Guru</h3>
+        <div class="grid">
+          <div>
+            <label>Nama</label>
+            <input id="guru-nama" placeholder="Pak Andi" />
+          </div>
+          <div>
+            <label>Username</label>
+            <input id="guru-username" placeholder="guru1" />
+          </div>
+          <div>
+            <label>Password</label>
+            <input id="guru-password" placeholder="••••••" type="password" />
+          </div>
+          <button class="btn primary" id="btn-guru-register">Daftar</button>
+          <div class="muted" id="guru-register-msg"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>🔐 Login Guru</h3>
+        <div class="grid">
+          <div>
+            <label>Username</label>
+            <input id="guru-login-username" placeholder="guru1" />
+          </div>
+          <div>
+            <label>Password</label>
+            <input id="guru-login-password" placeholder="••••••" type="password" />
+          </div>
+          <button class="btn primary" id="btn-guru-login">Login</button>
+          <div class="muted" id="guru-login-msg"></div>
+          <div class="muted">Status: <span id="guru-status" class="ok">Belum login</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SISWA ===================== -->
+    <section id="tab-siswa" class="grid two hidden">
+      <div class="card">
+        <h3>🧑‍🎓 Registrasi Siswa</h3>
+        <div class="grid">
+          <div>
+            <label>Nama</label>
+            <input id="siswa-nama" placeholder="Budi" />
+          </div>
+          <div>
+            <label>Username</label>
+            <input id="siswa-username" placeholder="siswa1" />
+          </div>
+          <div>
+            <label>Password</label>
+            <input id="siswa-password" placeholder="••••••" type="password" />
+          </div>
+          <button class="btn primary" id="btn-siswa-register">Daftar</button>
+          <div class="muted" id="siswa-register-msg"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>🔐 Login Siswa</h3>
+        <div class="grid">
+          <div>
+            <label>Username</label>
+            <input id="siswa-login-username" placeholder="siswa1" />
+          </div>
+          <div>
+            <label>Password</label>
+            <input id="siswa-login-password" placeholder="••••••" type="password" />
+          </div>
+          <button class="btn primary" id="btn-siswa-login">Login</button>
+          <div class="muted" id="siswa-login-msg"></div>
+          <div class="muted">Status: <span id="siswa-status" class="ok">Belum login</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TUGAS ===================== -->
+    <section id="tab-tugas" class="grid hidden">
+      <div class="card">
+        <h3>✍️ Buat Tugas (Guru)</h3>
+        <div class="grid two">
+          <div>
+            <label>Judul</label>
+            <input id="tugas-judul" placeholder="Tugas Matematika" />
+          </div>
+          <div>
+            <label>Untuk Siswa (siswaId)</label>
+            <input id="tugas-siswaId" placeholder="1" type="number" />
+          </div>
+          <div style="grid-column:1/-1">
+            <label>Deskripsi</label>
+            <textarea id="tugas-deskripsi" placeholder="Kerjakan soal halaman 12"></textarea>
+          </div>
+          <button class="btn primary" id="btn-tugas-buat">Kirim Tugas</button>
+          <div class="muted" id="tugas-buat-msg"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="row between">
+          <h3>📋 Daftar Tugas</h3>
+          <div class="row">
+            <button class="btn" id="btn-refresh-guru">Muat sebagai Guru</button>
+            <button class="btn" id="btn-refresh-siswa">Muat sebagai Siswa</button>
+          </div>
+        </div>
+        <div class="list" id="tugas-list"></div>
+      </div>
+    </section>
+
+    <!-- ===================== CHAT AI ===================== -->
+    <section id="tab-chat" class="grid hidden">
+      <div class="card">
+        <h3>🤖 Chat AI (tanya database)</h3>
+        <div class="grid">
+          <div class="muted">Endpoint yang dipanggil: <code>POST /chat-ai</code> di API backend. Jika belum ada, lihat petunjuk di bawah.</div>
+          <textarea id="ai-q" placeholder="contoh: Ada berapa guru? atau Tampilkan 5 tugas terbaru untuk siswa id=1"></textarea>
+          <div class="row">
+            <button class="btn primary" id="btn-ai-kirim">Kirim Pertanyaan</button>
+            <button class="btn warn" id="btn-ai-clear">Bersihkan</button>
+          </div>
+          <pre id="ai-log" class="card" style="white-space:pre-wrap"></pre>
+          <details class="card">
+            <summary>Petunjuk membuat endpoint <code>/chat-ai</code> cepat</summary>
+            <p class="muted">Tambahkan route berikut ke server Express kamu:</p>
+<pre><code>app.post('/chat-ai', async (req, res) =&gt; {
+  const {{ question }} = req.body;
+  // Panggil logika LangChain/Groq yang sudah kamu punya (sqlChain, SqlDatabase, dst.)
+  // Kembalikan { sql, result, answer }
+});</code></pre>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Dibuat sederhana untuk demo. Simpan token di <span class="kbd">localStorage</span>. Pastikan CORS aktif di API.
+  </footer>
+
+<script>
+  // ================== KONFIG ==================
+  const API_BASE = localStorage.getItem('API_BASE') || 'http://localhost:3000';
+  document.getElementById('apiBasePill').textContent = API_BASE;
+
+  // allow change API base quickly by pressing Ctrl+K
+  window.addEventListener('keydown', (e)=>{
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase()==='k'){
+      const v = prompt('Set API BASE URL:', API_BASE);
+      if (v){ localStorage.setItem('API_BASE', v); location.reload(); }
+    }
+  });
+
+  // ================== HELPERS ==================
+  const $ = (sel) => document.querySelector(sel);
+  const $$ = (sel) => document.querySelectorAll(sel);
+
+  function setStatus(el, ok, msg) {
+    el.textContent = msg;
+    el.className = ok ? 'muted ok' : 'muted err';
+  }
+
+  function token(role){ return localStorage.getItem(role + 'Token') || ''; }
+  function setToken(role, t){ localStorage.setItem(role + 'Token', t || ''); updateStatus(); }
+
+  function updateStatus(){
+    $('#guru-status').textContent = token('guru') ? 'Sudah login' : 'Belum login';
+    $('#siswa-status').textContent = token('siswa') ? 'Sudah login' : 'Belum login';
+  }
+  updateStatus();
+
+  async function api(path, {method='GET', body=null, bearer=null}={}){
+    const headers = { 'Content-Type':'application/json' };
+    if (bearer) headers['Authorization'] = 'Bearer ' + bearer;
+    const res = await fetch(API_BASE + path, { method, headers, body: body?JSON.stringify(body):null });
+    const data = await res.json().catch(()=>({}));
+    if (!res.ok) throw new Error(data.message || data.error || ('HTTP '+res.status));
+    return data;
+  }
+
+  function renderTugas(items, mode){
+    const list = $('#tugas-list');
+    list.innerHTML = '';
+    if (!items || !items.length){ list.innerHTML = '<div class="muted">(kosong)</div>'; return; }
+    for (const t of items){
+      const div = document.createElement('div');
+      div.className = 'item';
+      div.innerHTML = `
+        <div class="row between">
+          <div>
+            <strong>${t.judul}</strong>
+            <div class="muted">ID: ${t.id} • guruId: ${t.guruId} • siswaId: ${t.siswaId}</div>
+          </div>
+          <div class="row">
+            ${mode==='guru' ? `<button class="btn warn" data-edit="${t.id}">Edit</button>
+                               <button class="btn danger" data-del="${t.id}">Hapus</button>` : ''}
+          </div>
+        </div>
+        <div style="margin-top:8px">${t.deskripsi || ''}</div>
+      `;
+      list.appendChild(div);
+    }
+
+    // attach actions
+    list.querySelectorAll('[data-del]').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        if (!confirm('Hapus tugas ini?')) return;
+        try {
+          await api('/tugas/' + btn.dataset.del, { method:'DELETE', bearer: token('guru') });
+          $('#btn-refresh-guru').click();
+        } catch(e){ alert(e.message); }
+      });
+    });
+
+    list.querySelectorAll('[data-edit]').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        const id = btn.dataset.edit;
+        const judul = prompt('Judul baru:');
+        if (judul===null) return;
+        const deskripsi = prompt('Deskripsi baru:');
+        try {
+          const updated = await api('/tugas/' + id, { method:'PUT', bearer: token('guru'), body: { judul, deskripsi } });
+          $('#btn-refresh-guru').click();
+        } catch(e){ alert(e.message); }
+      });
+    });
+  }
+
+  // ================== TABS ==================
+  $$('#tabs .tab').forEach(btn => btn.addEventListener('click', () => {
+    $$('#tabs .tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const name = btn.dataset.tab;
+    ['guru','siswa','tugas','chat'].forEach(id => {
+      $('#tab-' + id).classList.toggle('hidden', id!==name);
+    });
+  }));
+
+  // ================== GURU ==================
+  $('#btn-guru-register').addEventListener('click', async () => {
+    setStatus($('#guru-register-msg'), true, 'Mendaftar...');
+    try {
+      const data = await api('/guru/register', {
+        method:'POST', body: {
+          nama: $('#guru-nama').value.trim(),
+          username: $('#guru-username').value.trim(),
+          password: $('#guru-password').value
+        }
+      });
+      setStatus($('#guru-register-msg'), true, 'Registrasi berhasil.');
+    } catch(e){ setStatus($('#guru-register-msg'), false, e.message); }
+  });
+
+  $('#btn-guru-login').addEventListener('click', async () => {
+    setStatus($('#guru-login-msg'), true, 'Login...');
+    try {
+      const data = await api('/guru/login', {
+        method:'POST', body: {
+          username: $('#guru-login-username').value.trim(),
+          password: $('#guru-login-password').value
+        }
+      });
+      setToken('guru', data.token);
+      setStatus($('#guru-login-msg'), true, 'Login sukses. Token disimpan.');
+    } catch(e){ setStatus($('#guru-login-msg'), false, e.message); }
+  });
+
+  // ================== SISWA ==================
+  $('#btn-siswa-register').addEventListener('click', async () => {
+    setStatus($('#siswa-register-msg'), true, 'Mendaftar...');
+    try {
+      const data = await api('/siswa/register', {
+        method:'POST', body: {
+          nama: $('#siswa-nama').value.trim(),
+          username: $('#siswa-username').value.trim(),
+          password: $('#siswa-password').value
+        }
+      });
+      setStatus($('#siswa-register-msg'), true, 'Registrasi berhasil.');
+    } catch(e){ setStatus($('#siswa-register-msg'), false, e.message); }
+  });
+
+  $('#btn-siswa-login').addEventListener('click', async () => {
+    setStatus($('#siswa-login-msg'), true, 'Login...');
+    try {
+      const data = await api('/siswa/login', {
+        method:'POST', body: {
+          username: $('#siswa-login-username').value.trim(),
+          password: $('#siswa-login-password').value
+        }
+      });
+      setToken('siswa', data.token);
+      setStatus($('#siswa-login-msg'), true, 'Login sukses. Token disimpan.');
+    } catch(e){ setStatus($('#siswa-login-msg'), false, e.message); }
+  });
+
+  // ================== TUGAS (GURU & SISWA) ==================
+  $('#btn-tugas-buat').addEventListener('click', async () => {
+    const judul = $('#tugas-judul').value.trim();
+    const deskripsi = $('#tugas-deskripsi').value.trim();
+    const siswaId = parseInt($('#tugas-siswaId').value, 10);
+    if (!token('guru')) return alert('Login sebagai GURU dahulu.');
+    try {
+      const created = await api('/tugas', { method:'POST', bearer: token('guru'), body: { judul, deskripsi, siswaId } });
+      setStatus($('#tugas-buat-msg'), true, 'Tugas dibuat: #' + created.id);
+      $('#btn-refresh-guru').click();
+    } catch(e){ setStatus($('#tugas-buat-msg'), false, e.message); }
+  });
+
+  $('#btn-refresh-guru').addEventListener('click', async () => {
+    if (!token('guru')) return alert('Login sebagai GURU dahulu.');
+    try {
+      const items = await api('/tugas/guru', { bearer: token('guru') });
+      renderTugas(items, 'guru');
+    } catch(e){ alert(e.message); }
+  });
+
+  $('#btn-refresh-siswa').addEventListener('click', async () => {
+    if (!token('siswa')) return alert('Login sebagai SISWA dahulu.');
+    try {
+      const items = await api('/tugas/siswa', { bearer: token('siswa') });
+      renderTugas(items, 'siswa');
+    } catch(e){ alert(e.message); }
+  });
+
+  // ================== CHAT AI ==================
+  $('#btn-ai-kirim').addEventListener('click', async () => {
+    const q = $('#ai-q').value.trim();
+    if (!q) return;
+    const log = $('#ai-log');
+    log.textContent += `\n> ${q}\n`;
+    try {
+      const res = await api('/chat-ai', { method:'POST', body: { question: q } });
+      const { sql, result, answer } = res;
+      log.textContent += `SQL: ${sql || '-'}\nHASIL: ${JSON.stringify(result)}\nJAWAB: ${answer}\n`;
+    } catch(e){
+      log.textContent += `Error: ${e.message}\n`;
+    }
+  });
+  $('#btn-ai-clear').addEventListener('click', () => $('#ai-log').textContent = '');
+</script>
+</body>
+</html>

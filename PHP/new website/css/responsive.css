@@ -1,0 +1,165 @@
+/* File: css/responsive.css */
+/* CSS tambahan untuk responsivitas yang lebih baik */
+
+/* Mobile First Approach */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .news-card {
+        padding: 1.5rem;
+    }
+    
+    .navbar ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .header .container {
+        text-align: center;
+    }
+    
+    .stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .stat-item {
+        padding: 1.5rem;
+    }
+    
+    .stat-item h3 {
+        font-size: 2rem;
+    }
+    
+    .teachers-grid,
+    .students-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Tablet */
+@media (min-width: 481px) and (max-width: 768px) {
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .hero h2 {
+        font-size: 2.2rem;
+    }
+    
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .teachers-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    .news-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .teachers-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Print Styles */
+@media print {
+    .header, .footer, .navbar, .article-actions {
+        display: none;
+    }
+    
+    .article-content {
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+    
+    .hero {
+        background: none !important;
+        color: #000 !important;
+    }
+    
+    .btn-primary {
+        display: none;
+    }
+}
+
+/* High DPI / Retina Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .gallery-item img {
+        image-rendering: -webkit-optimize-contrast;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #1a1a1a;
+        --text-color: #e0e0e0;
+        --card-bg: #2d2d2d;
+    }
+    
+    /* Uncomment below to enable dark mode
+    body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+    }
+    
+    .news-card,
+    .teacher-card,
+    .student-card,
+    .gallery-item,
+    .contact-form {
+        background: var(--card-bg);
+        color: var(--text-color);
+    }
+    */
+}
+
+/* Landscape orientation on mobile */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        padding: 2rem 0;
+    }
+    
+    .hero h2 {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .hero p {
+        margin-bottom: 1rem;
+    }
+}

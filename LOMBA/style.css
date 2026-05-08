@@ -1,0 +1,538 @@
+/* Base styles */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Main container */
+.pembelajaran {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.pembelajaran .div {
+  background-color: #ffffff;
+  overflow: hidden;
+  width: 1920px;
+  height: 1310px;
+  position: relative;
+}
+
+/* Layout containers */
+.pembelajaran .overlap {
+  position: absolute;
+  width: 1920px;
+  height: 1275px;
+  top: 59px;
+  left: 0;
+}
+
+.pembelajaran .overlap-group {
+  position: absolute;
+  width: 1920px;
+  height: 1275px;
+  top: 0;
+  left: 0;
+}
+
+/* Main content area */
+.pembelajaran .rectangle {
+  position: absolute;
+  width: 1436px;
+  height: 1063px;
+  top: 212px;
+  left: 479px;
+  background-color: #d9d9d9;
+  border-radius: 20px;
+}
+
+/* Header */
+.pembelajaran .rectangle-2 {
+  position: absolute;
+  width: 1920px;
+  height: 213px;
+  top: 0;
+  left: 0;
+  background-color: #ff45c7;
+}
+
+.pembelajaran .material-icon-theme {
+  position: absolute;
+  width: 128px;
+  height: 128px;
+  top: 41px;
+  left: 34px;
+}
+
+.pembelajaran .text-wrapper {
+  position: absolute;
+  width: 204px;
+  height: 44px;
+  top: 64px;
+  left: 200px;
+  font-family: "Poppins-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 56px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.pembelajaran .text-wrapper-2 {
+  position: absolute;
+  width: 1053px;
+  height: 51px;
+  top: 253px;
+  left: 503px;
+  font-family: "Poppins-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 56px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.pembelajaran .text-wrapper-3 {
+  position: absolute;
+  width: 291px;
+  height: 45px;
+  top: 131px;
+  left: 200px;
+  font-family: "Poppins-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 36px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.pembelajaran .text-wrapper-22 {
+  position: absolute;
+  width: 312px;
+  height: 44px;
+  top: 14px;
+  left: 0;
+  font-family: "Poppins-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 36px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+/* Main content text */
+.pembelajaran .menulis-kode-program {
+  position: absolute;
+  width: 1393px;
+  height: 180px;
+  top: 320px;
+  left: 503px;
+  font-family: "Poppins-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 30px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+/* Code editor section */
+.pembelajaran .rectangle-3 {
+  position: absolute;
+  width: 1350px;
+  height: 666px;
+  top: 501px;
+  left: 510px;
+  background-color: #626262;
+  border-radius: 25px;
+}
+
+.pembelajaran .rectangle-4 {
+  position: absolute;
+  width: 1274px;
+  height: 296px;
+  top: 585px;
+  left: 554px;
+  background-color: #ffffff;
+  border-radius: 25px;
+}
+
+.pembelajaran .rectangle-5 {
+  position: absolute;
+  width: 1274px;
+  height: 180px;
+  top: 959px;
+  left: 556px;
+  background-color: #ffffff;
+  border-radius: 25px;
+}
+
+.pembelajaran .rectangle-6 {
+  position: absolute;
+  width: 269px;
+  height: 59px;
+  top: 1191px;
+  left: 1586px;
+  background-color: #626262;
+  border-radius: 35px;
+}
+
+.pembelajaran .rectangle-7 {
+  position: absolute;
+  width: 49px;
+  height: 296px;
+  top: 585px;
+  left: 554px;
+  background-color: #d9d9d9;
+  border-radius: 25px 0px 0px 25px;
+}
+
+/* Tab */
+.pembelajaran .group {
+  position: absolute;
+  width: 148px;
+  height: 45px;
+  top: 509px;
+  left: 550px;
+}
+
+.pembelajaran .text-wrapper-5 {
+  position: absolute;
+  width: 146px;
+  height: 42px;
+  top: 0;
+  left: 0;
+  font-family: "Poppins-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 32px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.pembelajaran .line {
+  position: absolute;
+  width: 120px;
+  height: 3px;
+  top: 42px;
+  left: 4px;
+}
+
+/* Output label */
+.pembelajaran .text-wrapper-4 {
+  position: absolute;
+  width: 126px;
+  height: 42px;
+  top: 902px;
+  left: 570px;
+  font-family: "Poppins-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 32px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+/* Line numbers - consolidated */
+.pembelajaran .text-wrapper-6,
+.pembelajaran .text-wrapper-7,
+.pembelajaran .text-wrapper-8,
+.pembelajaran .text-wrapper-9 {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  left: 575px;
+  font-family: "Poppins-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.pembelajaran .text-wrapper-6 { top: 598px; }
+.pembelajaran .text-wrapper-7 { top: 632px; }
+.pembelajaran .text-wrapper-8 { top: 666px; }
+.pembelajaran .text-wrapper-9 { top: 695px; }
+
+/* Code content */
+.pembelajaran .text-wrapper-10 {
+  position: absolute;
+  width: 157px;
+  height: 10px;
+  top: 600px;
+  left: 610px;
+  font-family: "Poppins-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.pembelajaran .text-wrapper-11 {
+  position: absolute;
+  width: 157px;
+  height: 10px;
+  top: 991px;
+  left: 610px;
+  font-family: "Poppins-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+/* Run button */
+.pembelajaran .solar-play-bold-wrapper {
+  position: absolute;
+  width: 118px;
+  height: 32px;
+  top: 908px;
+  left: 1710px;
+  background-color: #d9d9d9;
+  border-radius: 25px;
+}
+
+.pembelajaran .solar-play-bold {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 6px;
+  left: 8px;
+}
+
+.pembelajaran .text-wrapper-12 {
+  position: absolute;
+  width: 78px;
+  height: 14px;
+  top: 915px;
+  left: 1742px;
+  font-family: "Poppins-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+/* Next button */
+.pembelajaran .text-wrapper-13 {
+  position: absolute;
+  width: 185px;
+  height: 43px;
+  top: 1198px;
+  left: 1635px;
+  font-family: "Poppins-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 32px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+/* Lesson cards - consolidated styles */
+.pembelajaran .overlap-group-wrapper,
+.pembelajaran .overlap-wrapper,
+.pembelajaran .group-2,
+.pembelajaran .group-3 {
+  position: absolute;
+  width: 344px;
+  height: 200px;
+}
+
+.pembelajaran .overlap-group-wrapper { top: 251px; left: 98px; }
+.pembelajaran .overlap-wrapper { top: 511px; left: 98px; }
+.pembelajaran .group-2 { top: 771px; left: 101px; }
+.pembelajaran .group-3 { top: 1031px; left: 106px; }
+
+.pembelajaran .overlap-group-2 {
+  position: relative;
+  width: 336px;
+  height: 200px;
+  background-color: #ff45c7;
+  border-radius: 20px;
+}
+
+.pembelajaran .overlap-group-3,
+.pembelajaran .overlap-group-4 {
+  position: absolute;
+  width: 291px;
+  height: 65px;
+  top: 58px;
+  left: 30px;
+}
+
+.pembelajaran .overlap-group-4 {
+  width: 306px;
+}
+
+/* Lesson titles - consolidated */
+.pembelajaran .text-wrapper-14,
+.pembelajaran .text-wrapper-18,
+.pembelajaran .text-wrapper-20 {
+  position: absolute;
+  width: 291px;
+  height: 35px;
+  top: 0;
+  left: 0;
+  font-family: "Poppins-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.pembelajaran .text-wrapper-18 { width: 306px; }
+.pembelajaran .text-wrapper-20 { text-align: center; }
+
+/* XP and Gold points - consolidated */
+.pembelajaran .text-wrapper-15 {
+  position: absolute;
+  width: 54px;
+  height: 35px;
+  top: 30px;
+  left: 37px;
+  color: #59ff64;
+  font-family: "Poppins-Medium", Helvetica;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.pembelajaran .text-wrapper-16 {
+  position: absolute;
+  width: 78px;
+  height: 35px;
+  top: 30px;
+  left: 187px;
+  color: #ffc31f;
+  font-family: "Poppins-Medium", Helvetica;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+/* Quiz buttons */
+.pembelajaran .div-wrapper {
+  position: absolute;
+  width: 190px;
+  height: 55px;
+  top: 128px;
+  left: 73px;
+  background-color: #ff8fcc;
+  border-radius: 20px;
+}
+
+/* Quiz button text - consolidated */
+.pembelajaran .text-wrapper-17,
+.pembelajaran .text-wrapper-19,
+.pembelajaran .text-wrapper-21 {
+  position: absolute;
+  width: 159px;
+  height: 35px;
+  top: 10px;
+  left: 15px;
+  font-family: "Poppins-Medium", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.pembelajaran .text-wrapper-19 { width: 175px; }
+.pembelajaran .text-wrapper-21 { width: 169px; }
+
+/* Progress indicators */
+.pembelajaran .overlap-2 {
+  position: absolute;
+  width: 30px;
+  height: 253px;
+  top: 381px;
+  left: 20px;
+}
+
+.pembelajaran .ellipse {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 223px;
+  left: 0;
+  background-color: #d9d9d9;
+  border-radius: 15px;
+}
+
+.pembelajaran .ellipse-2 {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 864px;
+  left: 20px;
+}
+
+.pembelajaran .ellipse-3 {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 1124px;
+  left: 20px;
+}
+
+.pembelajaran .mdi-check-bold-wrapper {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 351px;
+  left: 20px;
+  background-color: #d9d9d9;
+  border-radius: 15px;
+}
+
+.pembelajaran .mdi-check-bold {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 3px;
+  left: 3px;
+}
+
+/* Progress lines */
+.pembelajaran .img,
+.pembelajaran .line-2,
+.pembelajaran .line-3 {
+  position: absolute;
+  width: 1px;
+  object-fit: cover;
+}
+
+.pembelajaran .img {
+  height: 233px;
+  top: 0;
+  left: 15px;
+}
+
+.pembelajaran .line-2 {
+  height: 230px;
+  top: 634px;
+  left: 35px;
+}
+
+.pembelajaran .line-3 {
+  height: 230px;
+  top: 894px;
+  left: 35px;
+}

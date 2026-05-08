@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Environment variables
+.env
+.env.test
+.env.local
+.env.development.local
+.env.production.local
+
+# Build output
+dist/
+build/
+.cache/
+.next/
+out/
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Coverage / Test
+coverage/
+*.lcov
+
+# Optional: lockfiles (kalau nggak mau ikut ke repo)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml

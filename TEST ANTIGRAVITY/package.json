@@ -1,0 +1,30 @@
+{
+  "name": "project-mikail",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mikail-Laurana/PROJECT-MIKAIL.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mikail-Laurana/PROJECT-MIKAIL/issues"
+  },
+  "homepage": "https://github.com/Mikail-Laurana/PROJECT-MIKAIL#readme",
+  "description": "",
+  "dependencies": {
+    "@langchain/community": "^0.3.53",
+    "@langchain/core": "^0.3.72",
+    "@langchain/langgraph": "^0.4.8",
+    "@tailwindcss/vite": "^4.1.13",
+    "dotenv": "^16.6.1",
+    "qrcode-terminal": "^0.12.0",
+    "tailwindcss": "^4.1.13",
+    "whatsapp-web.js": "^1.33.0"
+  }
+}

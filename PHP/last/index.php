@@ -1,0 +1,8 @@
+<?php session_start(); ?>
+<form action="auth/proses_login.php" method="POST">
+    <h2>Login Perpustakaan</h2>
+    Username <input type="text" name="username" required><br>
+    Password <input type="password" name="password" required><br>
+    <button type="submit">Login</button>
+    <p>Belum punya akun? <a href="auth/register.php">Daftar</a></p>
+</form>
